@@ -1,0 +1,84 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modalContent {
+  background: transparent;
+  border-radius: 0;
+  padding: 1.5rem;
+  position: relative;
+  max-width: 1200px;
+  max-height: 100%;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slideDown 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  border: none;
+  font-size: 20px;
+  line-height: 14px;
+  cursor: pointer;
+  color: #fff;
+  z-index: 2;
+  background: #049ee9;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+.offerImage {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  border-radius: 0;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .modalContent {
+    padding: 0.5rem;
+    max-width: 98vw;
+    max-height: 98vh;
+  }
+  .imageWrapper {
+    width: 90vw;
+    height: 220px;
+    max-width: 98vw;
+  }
+  .offerImage {
+    max-width: 90vw;
+  }
+}
