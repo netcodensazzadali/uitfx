@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { Card } from "react-bootstrap";
 import { trackPixel } from "../../utils/trackPixel";
@@ -16,7 +17,7 @@ const AccountWrapper = () => {
   const cardInfo = [
     {
       title: "CLASSIC",
-      leverage: "1:500",
+      leverage: "1:1000",
       spread: "2.2",
       MaxLot: "20",
       StopOut: "80%",
@@ -32,6 +33,8 @@ const AccountWrapper = () => {
       StopOut: "80%",
       Commission: "N/A",
       deposit: "$5000",
+      premiumPriceText: "Financial Advisor",
+      premiumAlgoText: "Algo Trading Included",
       className: "active-account-types-card account-types-card",
     },
     {
@@ -42,6 +45,8 @@ const AccountWrapper = () => {
       StopOut: "80%",
       Commission: "$5",
       deposit: "$10000",
+      vipPriceText: "Financial Advisor",
+      vipAlgoText: "Algo Trading Included",
       className: "account-types-card",
     },
     {
@@ -56,12 +61,13 @@ const AccountWrapper = () => {
     },
     {
       title: "ISLAMIC",
-      leverage: "1:100",
+      leverage: "1:1",
       spread: "1.5",
       MaxLot: "20",
       StopOut: "80%",
       Commission: "N/A",
       deposit: "$3000",
+      islamicPriceText: "Financial Advisor",
       className: "account-types-card",
     },
   ];
@@ -123,18 +129,76 @@ const AccountWrapper = () => {
                   <li>
                     <span> Commission: {card.Commission}</span>
                   </li>
-                  {/* <li>
-                    <span> Max Lot Size: {card.MaxLot} lots</span>
-                  </li> */}
+                 
                   <li>
                     <span> Stop Out: {card.StopOut}</span>
                   </li>
+                  {/* Premium extra row */}
+                  {card.title === "PREMIUM" && (
+                    <>
+                      <li className="premium-li d-flex align-items-center justify-content-center gap-2">
+                        <Image
+                          src="/img/star.svg"
+                          alt="Premium Badge"
+                          width={13}
+                          height={12}
+                        />
+                        <span>{card.premiumPriceText}</span>
+                      </li>
+                      <li className="premium-li d-flex align-items-center justify-content-center gap-2">
+                        <Image
+                          src="/img/star.svg"
+                          alt="Premium Badge"
+                          width={13}
+                          height={12}
+                        />
+                        <span>{card.premiumAlgoText}</span>
+                      </li>
+                    </>
+                  )}
+                  {/* VIP extra row */}
+                  {card.title === "VIP" && (
+                    <>
+                      <li className="vip-li d-flex align-items-center justify-content-center gap-2">
+                        <Image
+                          src="/img/star.svg"
+                          alt="Premium Badge"
+                          width={13}
+                          height={12}
+                        />
+                        <span>{card.vipPriceText}</span>
+                      </li>
+                      <li className="premium-li d-flex align-items-center justify-content-center gap-2">
+                        <Image
+                          src="/img/star.svg"
+                          alt="Premium Badge"
+                          width={13}
+                          height={12}
+                        />
+                        <span>{card.vipAlgoText}</span>
+                      </li>
+                    </>
+                  )}
+                  {/* ISLAMIC extra row */}
+                  {card.title === "ISLAMIC" && (
+                    <>
+                      <li className="islamic-li d-flex align-items-center justify-content-center gap-2">
+                        <Image
+                          src="/img/star.svg"
+                          alt="Premium Badge"
+                          width={13}
+                          height={12}
+                        />
+                        <span>{card.islamicPriceText}</span>
+                      </li>
+                    </>
+                  )}
                 </ul>
               </div>
-              <div className="min-deposit">
+              {/* <div className="min-deposit">
                 <span className="text">Min Deposit</span>
                 <span>{card.deposit}</span>
-              </div>
+              </div> */}
               <div className="open-account">
                 <a
                   onClick={TradeNow}

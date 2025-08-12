@@ -1123,14 +1123,17 @@ $secondary: #333333;
     justify-content: center;
     margin-bottom: 210px;
     gap: 16px;
+    align-items: stretch;
 
     @media (max-width: 1199.98px) {
       margin-bottom: 150px;
+      flex-wrap: wrap;
     }
 
     @media (max-width: 767.98px) {
       flex-direction: column;
       margin-bottom: 0px;
+      align-items: center;
     }
   }
 }
@@ -2138,27 +2141,22 @@ $secondary: #333333;
     }
   }
 
-  @media (min-width: 992px) and (max-width: 1199.98px) {
+  @media (min-width: 768px) and (max-width: 1199.98px) {
     max-width: 290px;
   }
 
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    max-width: 230px;
-    height: 615px;
-  }
-
-  @media (max-width: 767.98px) {
-    height: auto;
-    max-width: 415px;
-    margin-bottom: 20px;
-  }
 
   .card-body {
     text-align: center;
-    padding: 50px 0;
+    padding: 50px 0 150px 0;
+    position: relative;
 
-    @media (min-width: 768px) and (max-width: 991.98px) {
-      padding: 50px 15px;
+    @media (max-width: 1199.98px) {
+      padding: 50px 0 50px 0;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .title-card {
@@ -2190,6 +2188,9 @@ $secondary: #333333;
 
           span {
             font-weight: 500;
+            @media (min-width: 1200px) and (max-width: 1399.98px) {
+              font-size: 14px;
+            }
           }
         }
       }
@@ -2216,6 +2217,18 @@ $secondary: #333333;
     }
 
     .open-account {
+      position: absolute;
+      bottom: 10%;
+      left: 18%;
+      @media (min-width: 1200px) and (max-width: 1399.98px) {
+        left: 10%;
+      }
+      @media (max-width: 1199.98px) {
+        bottom: 0px;
+        left: 0px;
+        position: relative;
+      }
+      
       a {
         border-radius: 8px;
         border: 1px solid rgba(255, 255, 255, 0.3);

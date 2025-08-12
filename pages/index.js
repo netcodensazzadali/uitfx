@@ -30,7 +30,7 @@ export default function Home() {
       {/* <OfferModal imageUrl="/img/offer.png" altText="Special Offer" /> */}
       <main>
         <Banner></Banner>
-        <TradingOption></TradingOption>
+        <Review></Review>
         <div className="advantages bg-white pb-0">
           <Container>
             <Row className="mb-5">
@@ -42,11 +42,7 @@ export default function Home() {
                   </span>
                   <ul className="download-list">
                     <li>
-                      <a
-                        href="#"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
+                      <a href="#" target="_blank" rel="noreferrer">
                         <Image
                           layout="intrinsic"
                           src="/img/ch.png"
@@ -56,7 +52,6 @@ export default function Home() {
                         ></Image>
                         <p className="mb-0">Web Platform</p>
                       </a>
-                      
                     </li>
                     <li>
                       <a
@@ -73,7 +68,6 @@ export default function Home() {
                         ></Image>
                         <p className="mb-0">MT5 for Desktop</p>
                       </a>
-                      
                     </li>
                     <li>
                       <a
@@ -90,14 +84,9 @@ export default function Home() {
                         ></Image>
                         <p className="mb-0 mt-2">MT5 for Android</p>
                       </a>
-                      
                     </li>
                     <li>
-                      <a
-                        href="#"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
+                      <a href="#" target="_blank" rel="noreferrer">
                         <Image
                           layout="intrinsic"
                           src="/img/ap.png"
@@ -107,7 +96,6 @@ export default function Home() {
                         ></Image>
                         <p className="mb-0 mt-2">MT5 for iOS</p>
                       </a>
-                      
                     </li>
                   </ul>
                 </div>
@@ -127,9 +115,10 @@ export default function Home() {
           subtitle="Sign up today & see what makes us the broker of choice"
         ></WhichOne>
         <PaymentMethod></PaymentMethod>
-
-        <Review></Review>
-        <Faq></Faq>
+        <div className="pb-5 mb-5">
+          <TradingOption></TradingOption>
+        </div>
+        "<Faq></Faq>
         <Footer></Footer>
       </main>
     </div>
