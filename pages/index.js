@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Col, Container, Row } from "react-bootstrap";
 import Banner from "../components/banners/Banner";
 import Footer from "../components/footer/Footer";
+import OfferModal from "../components/OfferModal";
 import AccountTypes from "../components/sections/AccountTypes";
 import Advantages from "../components/sections/Advantages";
 import ChooseUs from "../components/sections/ChooseUs";
@@ -27,7 +28,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* Offer Modal appears on first load. Change imageUrl to your offer image path */}
-      {/* <OfferModal imageUrl="/img/offer.png" altText="Special Offer" /> */}
+      <OfferModal imageUrl="/img/offer.png" altText="Special Offer" />
+     
       <main>
         <Banner></Banner>
         <Review></Review>

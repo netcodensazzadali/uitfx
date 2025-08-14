@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import BannerAnother from "../../components/banners/BannerAnother";
 import Footer from "../../components/footer/Footer";
+import Offer from "../../components/sections/Offer";
 import PaymentMethod from "../../components/sections/PaymentMethod";
 import Review from "../../components/sections/Review";
 import StepsCard from "../../components/sections/StepsCard";
@@ -74,7 +75,8 @@ UITFX is putting funds to your account & letting you make live trades while you 
           </div>
         </div>
 
-        {/* <Offer></Offer> */}
+        <Offer></Offer>
+        
 
         <div className="ProfitableSteps pt-5">
           <Container>

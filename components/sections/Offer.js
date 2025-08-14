@@ -16,7 +16,7 @@ const Offer = () => {
         <Row>
           <Col xl={12} className="text-center pt-5">
             <SectionTitleFlip
-              headingtitle="18th  July - is the Last Date"
+              headingtitle="14  August - is the Last Date"
               headingSubTitle="for claiming 10 USD no deposit bonus"
             ></SectionTitleFlip>
           </Col>
